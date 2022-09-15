@@ -3,8 +3,6 @@ const Post = db.posts;
 const Op = db.Sequelize.Op;
 
 const create = (req, res) => {
-  console.log("req.body", req.body);
-
   if (!req.body.title) {
     res.status(400).send({
       message: "Content can not be empty! yoyo",
@@ -32,4 +30,19 @@ const create = (req, res) => {
     });
 };
 
-module.exports = { create };
+const findAll = (req, res) => {
+  Post.findAll()
+    .then((data) => {
+      res.send({
+        message: "Get all posts successfully!",
+        data,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving posts.",
+      });
+    });
+};
+
+module.exports = { create, findAll };
