@@ -1,4 +1,5 @@
-const db = require("../models");
+import db from "../models/index.js";
+
 const Post = db.posts;
 const Op = db.Sequelize.Op;
 
@@ -45,4 +46,4 @@ const findAll = (req, res) => {
     });
 };
 
-module.exports = { create, findAll };
+export default { create, findAll };

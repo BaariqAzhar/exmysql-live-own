@@ -1,4 +1,4 @@
-module.exports = {
+const dbConfig = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: "",
@@ -11,3 +11,5 @@ module.exports = {
     idle: 10000, // maximum time, in milliseconds, that a connection can be idle before being released
   },
 };
+
+export default dbConfig;

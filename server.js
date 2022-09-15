@@ -1,8 +1,8 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-
-const db = require("./models");
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import postRoutes from "./routes/post.routes.js";
+import db from "./models/index.js";
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   });
 });
 
-require("./routes/post.routes")(app);
+postRoutes(app);
 
 const PORT = 8100;
 

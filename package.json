@@ -7,6 +7,7 @@
     "start": "nodemon server.js -e ejs,js,css,html,jpg,png,scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "keywords": [
     "express",
     "mysql",

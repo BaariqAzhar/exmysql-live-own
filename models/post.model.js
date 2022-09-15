@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize) => {
+const postModel = (sequelize, Sequelize) => {
   const Post = sequelize.define("post", {
     title: {
       type: Sequelize.STRING,
@@ -13,3 +13,5 @@ module.exports = (sequelize, Sequelize) => {
 
   return Post;
 };
+
+export default postModel;
